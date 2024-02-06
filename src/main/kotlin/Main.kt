@@ -7,7 +7,6 @@ import okhttp3.*
 import okio.IOException
 
 private val client = OkHttpClient()
-private val q1 = Question(Type.BOOLEAN, "EE")
 
 fun main() {
 
