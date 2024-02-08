@@ -12,7 +12,7 @@ enum class Difficulty/*(val : String)*/ {
      */
     override fun toString(): String
     {
-        var difficultyString = this.toString()
+        var difficultyString = super.toString() //Super needed otherwise the toString() causes it to call this method
         difficultyString = difficultyString.lowercase() //Assignment needed since [StringsJVM.toLowerCase()] is deprecated and .lowercase() doesn't modify the original string
         return difficultyString
     }
