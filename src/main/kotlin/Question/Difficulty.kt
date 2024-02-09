@@ -1,8 +1,13 @@
 package org.example.Question
 
+import com.google.gson.annotations.SerializedName
+
 enum class Difficulty/*(val : String)*/ {
+    @SerializedName("easy")
     EASY,
+    @SerializedName("medium")
     MEDIUM,
+    @SerializedName("hard")
     HARD;
 
     //Either have this or a (val name: String) as constructor, this is better
