@@ -1,17 +1,34 @@
 package org.example.Question
 
-/* pretty printed JSON reply
+import com.google.gson.annotations.SerializedName
+import org.example.Utils.StringUtils.Companion.toTitleCase
+
+/* pretty printed JSON reply 2 questions
 {
   "response_code": 0,
   "results": [
     {
-      "type": "boolean",
-      "difficulty": "easy",
-      "category": "Science: Mathematics",
-      "question": "An isosceles triangle has two sides of equal length as opposed to three.",
-      "correct_answer": "True",
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Vehicles",
+      "question": "What engine is in the Lexus SC400?",
+      "correct_answer": "1UZ-FE",
       "incorrect_answers": [
-        "False"
+        "2JZ-GTE",
+        "7M-GTE",
+        "5M-GE"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Sports",
+      "question": "What is the highest belt you can get in Taekwondo?",
+      "correct_answer": "Black",
+      "incorrect_answers": [
+        "White",
+        "Red",
+        "Green"
       ]
     }
   ]
@@ -31,12 +48,29 @@ package org.example.Question
 class Question(val type: Type,
                val difficulty: Difficulty,
                val category: Category,
+               @SerializedName("question")
                val questionText: String,
+               @SerializedName("correct_answer")
                val correctAnswer: String,
+               @SerializedName("incorrect_answers")
                val incorrectAnswers: List<String>)
 {
 
-    fun isAnswerCorrect(answer: String) : Boolean
+    override fun toString() : String
+    {
+
+        //multiple strings used for [Utils.StringUtils.toTitleCase()]
+
+
+        return """Type: ${type.toString().toTitleCase()}
+            |Difficulty: ${difficulty.toString().toTitleCase()}
+            |Category: ${category.toString().toTitleCase()}
+            |Question Text: ${questionText}
+            |Correct Answer: ${correctAnswer}
+            |Incorrect Answers: ${incorrectAnswers}""".trimMargin()
+    }
+
+    fun isAnswerCorrect(answer: String): Boolean
     {
         return answer == correctAnswer
     }
