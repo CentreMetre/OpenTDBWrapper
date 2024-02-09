@@ -36,4 +36,10 @@ class Question(val type: Type,
                val incorrectAnswers: List<String>)
 {
 
+    fun isAnswerCorrect(answer: String) : Boolean
+    {
+        return answer == correctAnswer
+    }
+
+
 }
