@@ -1,16 +1,46 @@
 package org.example
 
 //Fully qualified name needed for local
+import com.google.gson.*
 import org.example.Question.*
+import java.lang.reflect.Type
 
 import okhttp3.*
 import okio.IOException
+import org.example.Utils.StringUtils.Companion.toTitleCase
 
 private val client = OkHttpClient()
 
+
+
 fun main() {
 
-    println(Difficulty.EASY.toString())
+//    var name = "martin"
+//    var sentence = "Name: ${name.toTitleCase()}"
+//    println(sentence)
+
+
+
+
+    val json = """{
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Vehicles",
+      "question": "What engine is in the Lexus SC400?",
+      "correct_answer": "1UZ-FE",
+      "incorrect_answers": [
+        "2JZ-GTE",
+        "7M-GTE",
+        "5M-GE"
+      ]
+    }"""
+
+    val gson = Gson()
+
+    val tutorial1: Question = gson.fromJson(json, Question::class.java)
+    println(tutorial1.toString())
+
+    println(tutorial1.isAnswerCorrect("1UZ-FE"))
 
 //    val request = Request.Builder()
 //        .url("https://opentdb.com/api.php?amount=10")
