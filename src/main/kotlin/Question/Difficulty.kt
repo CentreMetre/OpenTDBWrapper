@@ -2,13 +2,19 @@ package org.example.Question
 
 import com.google.gson.annotations.SerializedName
 
-enum class Difficulty/*(val : String)*/ {
+val d = "&difficulty="
+
+enum class Difficulty(val urlName: String) {
+    /**
+     * Used solely for api call and not for the returned JSON
+     */
+    ANY(""),
     @SerializedName("easy")
-    EASY,
+    EASY(d+"easy"),
     @SerializedName("medium")
-    MEDIUM,
+    MEDIUM(d+"medium"),
     @SerializedName("hard")
-    HARD;
+    HARD(d+"hard");
 
     //Either have this or a (val name: String) as constructor, this is better
     /**

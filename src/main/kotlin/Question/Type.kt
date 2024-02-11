@@ -1,10 +1,14 @@
 package org.example.Question
 
 import com.google.gson.annotations.SerializedName
-
-enum class Type {
+val t = "&type="
+enum class Type(val urlName: String) {
+    /**
+     * Used solely for api call and not for the returned JSON
+     */
+    ANY(""),
     @SerializedName("multiple")
-    MULTIPLE, //String, does have to have multiple correct answers
+    MULTIPLE(t+"multiple"), //String, does have to have multiple correct answers
     @SerializedName("boolean")
-    BOOLEAN //True of false
+    BOOLEAN(t+"boolean")//True of false
 }
