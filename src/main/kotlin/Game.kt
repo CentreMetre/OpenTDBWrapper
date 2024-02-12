@@ -45,9 +45,9 @@ class Game(val numberOfQuestions: Int,
      */
     private fun urlBuilder(): String
     {
-        val baseURL = "https://opentdb.com/api.php?amount="
+        val baseURL = "https://opentdb.com/api.php? "
         var finalURL = baseURL
-        val gameParameters = listOf(numberOfQuestions, category, difficulty, type)
+        //val gameParameters = listOf(numberOfQuestions, category, difficulty, type)
         val amountURL = "amount="
 
         finalURL = finalURL + amountURL + numberOfQuestions + category.urlName + difficulty.urlName + type.urlName
