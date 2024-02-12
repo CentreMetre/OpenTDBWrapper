@@ -22,12 +22,11 @@ fun main() {
 
     val numberOfQuestions = 10
     val category = Category.SCIENCE_GADGETS
-    val difficulty = Difficulty.MEDIUM
+    val difficulty = Difficulty.EASY
     val type = org.example.Question.Type.BOOLEAN
 
     val baseURL = "https://opentdb.com/api.php?"
     var finalURL = baseURL
-    val gameParameters = listOf(numberOfQuestions, category, difficulty, type)
     val amountURL = "amount="
 
     finalURL = finalURL + amountURL + numberOfQuestions + category.urlName + difficulty.urlName + type.urlName
