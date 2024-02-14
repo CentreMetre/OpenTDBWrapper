@@ -43,16 +43,7 @@ class Game(val numberOfQuestions: Int,
     /**
      * Builds the URL needed for the api call using the parameters of the class creation
      */
-    private fun urlBuilder(): String
-    {
-        val baseURL = "https://opentdb.com/api.php? "
-        var finalURL = baseURL
-        //val gameParameters = listOf(numberOfQuestions, category, difficulty, type)
-        val amountURL = "amount="
 
-        finalURL = finalURL + amountURL + numberOfQuestions + category.urlName + difficulty.urlName + type.urlName
-        return finalURL
-    }
 
     private fun setQuestions(questionList: List<Question>)
     {
@@ -60,5 +51,10 @@ class Game(val numberOfQuestions: Int,
         {
             questions[i] = questionList[i]
         }
+    }
+
+    fun addQuestion(question: Question)
+    {
+            questions.add(question)
     }
 }
