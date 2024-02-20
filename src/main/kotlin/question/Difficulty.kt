@@ -1,4 +1,4 @@
-package org.example.Question
+package org.example.question
 
 import com.google.gson.annotations.SerializedName
 
@@ -10,11 +10,11 @@ enum class Difficulty(val urlName: String) {
      */
     ANY(""),
     @SerializedName("easy")
-    EASY(d+"easy"),
+    EASY(d +"easy"),
     @SerializedName("medium")
-    MEDIUM(d+"medium"),
+    MEDIUM(d +"medium"),
     @SerializedName("hard")
-    HARD(d+"hard");
+    HARD(d +"hard");
 
     //Either have this or a (val name: String) as constructor, this is better
     /**

@@ -1,28 +1,21 @@
 package org.example
 
 //Fully qualified name needed for local
-import com.google.gson.*
-import org.example.Question.*
-import org.example.Game
-import org.example.Api.*
 
 import okhttp3.*
-import okio.IOException
-import okio.use
-import org.example.Api.ApiHandler
-import org.example.Utils.StringUtils.Companion.toTitleCase
+//utils
+import org.example.utils.StringUtils.Companion.decodeHtmlEntities
 
 private val client = OkHttpClient()
 
 
 
 fun main() {
-
-
-
-    val game = Game(10, Category.ANY, Difficulty.ANY, Type.ANY)
-    val apiHandler = ApiHandler()
-    println(apiHandler.callApi(game))
-
+//    val game = Game(10, Category.ANY, Difficulty.ANY, Type.ANY)
+//    val apiHandler = ApiHandler()
+//    println(apiHandler.callApi(game))
+    val htmlEncodedString = "This is a &lt;b&gt;sample&lt;/b&gt; string with HTML entities."
+    val decodedString = decodeHtmlEntities(htmlEncodedString)
+    println("Decoded String: $decodedString")
 }
 

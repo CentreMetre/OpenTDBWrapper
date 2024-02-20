@@ -1,11 +1,17 @@
-package org.example.Api
+package org.example.tdbapi
 
-import org.example.Question.Question
+import com.google.gson.annotations.SerializedName
+import org.example.question.Question
 
 /**
  * @param responseCode The response code from the api
  * @param results The questions from the results list of the json returned
  */
-class ApiResponse(responseCode : Int, results: List<Question>) {
+class ApiResponse(
+    @SerializedName("response_code")
+    val responseCode : Int,
+    val results: List<Question>
+)
+{
 
 }

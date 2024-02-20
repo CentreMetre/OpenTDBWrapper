@@ -1,4 +1,4 @@
-package org.example.Question
+package org.example.question
 
 import com.google.gson.annotations.SerializedName
 

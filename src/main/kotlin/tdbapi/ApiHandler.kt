@@ -1,4 +1,4 @@
-package org.example.Api
+package org.example.tdbapi
 
 import okhttp3.*
 import org.example.Game

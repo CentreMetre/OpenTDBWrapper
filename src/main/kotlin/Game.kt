@@ -1,6 +1,6 @@
 package org.example
 
-import org.example.Question.*
+import org.example.question.*
 
 /*
  * Order:

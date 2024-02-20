@@ -1,7 +1,7 @@
-package org.example.Question
+package org.example.question
 
 import com.google.gson.annotations.SerializedName
-import org.example.Utils.StringUtils.Companion.toTitleCase
+import org.example.utils.StringUtils.Companion.toTitleCase
 
 /* pretty printed JSON reply 2 questions
 {

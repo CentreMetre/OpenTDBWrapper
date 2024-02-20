@@ -1,4 +1,4 @@
-package org.example.Question
+package org.example.question
 
 import com.google.gson.annotations.SerializedName
 val t = "&type="
@@ -8,7 +8,7 @@ enum class Type(val urlName: String) {
      */
     ANY(""),
     @SerializedName("multiple")
-    MULTIPLE(t+"multiple"), //String, does have to have multiple correct answers
+    MULTIPLE(t +"multiple"), //String, does have to have multiple correct answers
     @SerializedName("boolean")
-    BOOLEAN(t+"boolean")//True of false
+    BOOLEAN(t +"boolean")//True of false
 }

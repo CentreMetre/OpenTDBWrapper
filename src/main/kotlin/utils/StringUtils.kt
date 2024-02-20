@@ -1,4 +1,4 @@
-package org.example.Utils
+package org.example.utils
 
 class StringUtils {
     companion object{
@@ -16,6 +16,28 @@ class StringUtils {
             }
             val originalString = charList.joinToString("")
             return originalString
+        }
+
+        fun decodeHtmlEntities(input: String): String {
+            // Define a map of HTML entities and their corresponding characters
+            val htmlEntitiesMap = mapOf(
+                "&amp;" to "&",
+                "&lt;" to "<",
+                "&gt;" to ">",
+                "&quot;" to """"""",
+                "&#39;" to "'",
+                "&#039;" to "'",  // Handle additional single quote encoding
+                "&nbsp;" to " ",
+                "&copy;" to "©",
+                // Add more mappings as needed
+            )
+
+            // Replace each HTML entity in the input string with its corresponding character
+            var decodedString = input
+            for ((entity, value) in htmlEntitiesMap) {
+                decodedString = decodedString.replace(entity, value)
+            }
+            return decodedString
         }
 
     }
