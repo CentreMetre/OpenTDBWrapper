@@ -1,6 +1,7 @@
 package org.example
 
 import org.example.question.*
+import org.example.tdbapi.ApiHandler
 
 /*
  * Order:
@@ -9,6 +10,11 @@ import org.example.question.*
  * Difficulty
  * Type (multiple choice or true/false
  * encoding
+ */
+
+/*
+Everything is contained within game. So game would call the API classes etc.
+So a user only needs to interact with the game class
  */
 
 /**
@@ -24,15 +30,22 @@ class Game(val numberOfQuestions: Int,
            val type: Type
            /*val questionList: List<Question>*/)
 {
-    private val emptyQuestion = Question(Type.BOOLEAN, Difficulty.EASY, Category.ANY, "", "", listOf(""))
+    private val emptyQuestion = Question(Type.BOOLEAN,
+        Difficulty.EASY,
+        Category.ANY,
+        "",
+        "",
+        listOf(""))
 
     private var score: Int = 0
     private var currentQuestion: Question? = null
     private val questions = MutableList(numberOfQuestions) {emptyQuestion}
 
+    private var api = ApiHandler()
+
     init
     {
-
+        api.callApi(this)
     }
 
     private fun callApi()
