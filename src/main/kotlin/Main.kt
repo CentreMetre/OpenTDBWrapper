@@ -3,19 +3,19 @@ package org.example
 //Fully qualified name needed for local
 
 import okhttp3.*
+import org.example.question.Category
+import org.example.question.Difficulty
+import org.example.question.Type
 //utils
-import org.example.utils.StringUtils.Companion.decodeHtmlEntities
+//import org.example.utils.StringUtils.Companion.decodeHtmlEntities
 
 private val client = OkHttpClient()
 
 
 
 fun main() {
-//    val game = Game(10, Category.ANY, Difficulty.ANY, Type.ANY)
-//    val apiHandler = ApiHandler()
-//    println(apiHandler.callApi(game))
-    val htmlEncodedString = "This is a &lt;b&gt;sample&lt;/b&gt; string with HTML entities."
-    val decodedString = decodeHtmlEntities(htmlEncodedString)
-    println("Decoded String: $decodedString")
+    val game = Game(3, Category.ENTERTAINMENT_BOARD_GAMES, Difficulty.ANY, Type.ANY)
+    println(game.apiResponse.responseCode)
+
 }
 

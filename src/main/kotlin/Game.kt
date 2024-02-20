@@ -1,7 +1,11 @@
 package org.example
 
-import org.example.question.*
+import org.example.question.Question
+import org.example.question.Type
+import org.example.question.Difficulty
+import org.example.question.Category
 import org.example.tdbapi.ApiHandler
+import org.example.tdbapi.ResponseCode
 
 /*
  * Order:
@@ -37,37 +41,23 @@ class Game(val numberOfQuestions: Int,
         "",
         listOf(""))
 
-    private var score: Int = 0
-    private var currentQuestion: Question? = null
-    private val questions = MutableList(numberOfQuestions) {emptyQuestion}
+    var score: Int = 0
+    var currentQuestion: Question? = null
+    private var questions = List(numberOfQuestions) {emptyQuestion}
 
     private var api = ApiHandler()
+    private val jsonParser = JsonParser()
+    public var apiResponse = ParsedResponse(ResponseCode.SUCCESS, listOf(emptyQuestion))
 
     init
     {
-        api.callApi(this)
+        var json = api.callApi(this)
+        apiResponse = jsonParser.parseIntoParsedResponse(json)
+        questions = apiResponse.results
     }
 
     private fun callApi()
     {
 
-    }
-
-    /**
-     * Builds the URL needed for the api call using the parameters of the class creation
-     */
-
-
-    private fun setQuestions(questionList: List<Question>)
-    {
-        for (i in questionList.indices)
-        {
-            questions[i] = questionList[i]
-        }
-    }
-
-    fun addQuestion(question: Question)
-    {
-            questions.add(question)
     }
 }

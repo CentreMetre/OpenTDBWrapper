@@ -1,7 +1,8 @@
-package org.example.tdbapi
+package org.example
 
 import com.google.gson.annotations.SerializedName
 import org.example.question.Question
+import org.example.tdbapi.ResponseCode
 
 /*
 Code 0: Success Returned results successfully.
@@ -13,14 +14,13 @@ Code 5: Rate Limit Too many requests have occurred. Each IP can only access the 
  */
 
 /**
+ * Holds the information from the api response: the response code and the list of questions
  * @param responseCode The response code from the api
  * @param results The questions from the results list of the json returned
  */
-class ApiResponse(
+class ParsedResponse(
     @SerializedName("response_code")
     val responseCode : ResponseCode,
     val results: List<Question>
 )
-{
-
-}
+{}
