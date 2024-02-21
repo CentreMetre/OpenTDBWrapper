@@ -65,9 +65,10 @@ class Question(val type: Type,
         return """Type: ${type.toString().toTitleCase()}
             |Difficulty: ${difficulty.toString().toTitleCase()}
             |Category: ${category.toString().toTitleCase()}
-            |Question Text: ${questionText}
-            |Correct Answer: ${correctAnswer}
-            |Incorrect Answers: ${incorrectAnswers}""".trimMargin()
+            |Question Text: $questionText
+            |Correct Answer: $correctAnswer
+            |Incorrect Answers: $incorrectAnswers
+            |""".trimMargin()
     }
 
     fun isAnswerCorrect(answer: String): Boolean
