@@ -61,6 +61,11 @@ class Game(val numberOfQuestions: Int = 10,
         if (!isSuccessful()) throw IllegalArgumentException("No questions in list. Reason: ${responseCode.toString()}")
         questions = response.results
 
+        //needed since init isnt called
+        for (q: Question in questions)
+        {
+            q.decodeHtml()
+        }
 
 
     }

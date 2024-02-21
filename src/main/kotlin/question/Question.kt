@@ -2,6 +2,7 @@ package org.example.question
 
 import com.google.gson.annotations.SerializedName
 import org.example.utils.StringUtils.Companion.toTitleCase
+import org.example.utils.StringUtils.Companion.decodeHtmlEntities
 
 /* pretty printed JSON reply 2 questions
 {
@@ -45,19 +46,71 @@ import org.example.utils.StringUtils.Companion.toTitleCase
  * @param correctAnswer The correct answer to the question. Only ever one correct answer
  * @param incorrectAnswers A list of strings that are incorrect answers
  */
-class Question(val type: Type,
-               val difficulty: Difficulty,
-               val category: Category,
+class Question(private var type: Type,
+               private var difficulty: Difficulty,
+               private var category: Category,
                @SerializedName("question")
-               val questionText: String,
+               private var questionText: String,
                @SerializedName("correct_answer")
-               val correctAnswer: String,
+               private var correctAnswer: String,
                @SerializedName("incorrect_answers")
-               val incorrectAnswers: List<String>)
+               private var incorrectAnswers: List<String>)
 {
+    //getters used since class parameters need to be var so html decoding can work
+
+
+    fun getType(): Type
+    {
+        return this.type
+    }
+
+    fun getDifficulty(): Difficulty
+    {
+        return this.difficulty
+    }
+
+    fun getCategory(): Category
+    {
+        return this.category
+    }
+
+    fun getQuestionText(): String
+    {
+        return this.questionText
+    }
+
+    fun getCorrectAnswer(): String
+    {
+        return this.correctAnswer
+    }
+
+    fun getIncorrectAnswers(): List<String>
+    {
+        return this.incorrectAnswers
+    }
+
+    /**
+     * Function to decode the HTML encoding. Cannot be in init block since gson uses reflection and doesn't call init
+     */
+    fun decodeHtml()
+    {
+        this.questionText = decodeHtmlEntities(this.questionText)
+        this.correctAnswer = decodeHtmlEntities(this.correctAnswer)
+
+        val mutableList = this.incorrectAnswers.toMutableList()
+
+        for (i in mutableList.indices)
+        {
+            mutableList[i] = decodeHtmlEntities(mutableList[i])
+        }
+
+        incorrectAnswers = mutableList.toList()
+
+    }
 
     override fun toString() : String
     {
+
 
         //multiple strings used for [Utils.StringUtils.toTitleCase()]
 
