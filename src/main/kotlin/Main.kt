@@ -5,7 +5,11 @@ package org.example
 import okhttp3.*
 import org.example.question.Category
 import org.example.question.Difficulty
+import org.example.question.Question
 import org.example.question.Type
+import org.example.tdbapi.ResponseCode
+import kotlin.system.exitProcess
+
 //utils
 //import org.example.utils.StringUtils.Companion.decodeHtmlEntities
 
@@ -14,8 +18,12 @@ private val client = OkHttpClient()
 
 
 fun main() {
-    val game = Game(3, Category.ENTERTAINMENT_BOARD_GAMES, Difficulty.ANY, Type.ANY)
-    println(game.apiResponse.responseCode)
+    val game = Game(40)
+    println(game.isSuccessful())
+    println(game.getResponseCode())
 
+    println(game.questions[0])
+
+    //var json = """{"response_code":0,"results":[{"type":"multiple","difficulty":"hard","category":"Entertainment: Music","question":"Which of the following is NOT a real song from the band Thousand Foot Krutch?","correct_answer":"Limitless Fury","incorrect_answers":["Let The Sparks Fly","Down","Give Up The Ghost"]}]}"""
 }
 
