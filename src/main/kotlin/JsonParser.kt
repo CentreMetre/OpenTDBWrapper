@@ -12,6 +12,7 @@ class JsonParser {
         val apiResponse = gson.fromJson(json, ParsedResponse::class.java)
 
         return apiResponse
+        // parsed straight into ParsedResponse class type since its easier i dont know how to get individual information
     }
 
 }
