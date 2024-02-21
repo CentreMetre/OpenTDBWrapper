@@ -22,5 +22,4 @@ class ParsedResponse(
     @SerializedName("response_code")
     val responseCode : ResponseCode,
     val results: List<Question>
-)
-{}
+) {}

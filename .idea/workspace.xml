@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de53ac00-6a92-4e15-8674-c920f0c1517f" name="Changes" comment="Changed line breakpoints in Game.kt, changed response code to Enum type in ApiResponse.kt">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/JsonParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="de53ac00-6a92-4e15-8674-c920f0c1517f" name="Changes" comment="Seemingly finished api stuff and game.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Game.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/tdbapi/ApiHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/tdbapi/ApiHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/tdbapi/ApiResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ParsedResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ParsedResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ParsedResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/question/Question.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/question/Question.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,21 +67,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build OpenTDBWrapper.executor": "Run",
-    "Kotlin.Main.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build OpenTDBWrapper.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="" />
@@ -169,6 +165,7 @@
     <MESSAGE value="Add unversioned Files" />
     <MESSAGE value="Added response code enum" />
     <MESSAGE value="Changed line breakpoints in Game.kt, changed response code to Enum type in ApiResponse.kt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed line breakpoints in Game.kt, changed response code to Enum type in ApiResponse.kt" />
+    <MESSAGE value="Seemingly finished api stuff and game." />
+    <option name="LAST_COMMIT_MESSAGE" value="Seemingly finished api stuff and game." />
   </component>
 </project>
